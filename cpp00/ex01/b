@@ -1,0 +1,177 @@
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
++642774380A: is not a correct phone number
+Phone number: 
+Darkest secret: 
+1
+---------------------------------------------
+|   Index  |First Name|Last  name| Nick name|
+---------------------------------------------
+|         0|Jose Igna.|Alvarado .|  jalvarad|
+---------------------------------------------
+Please enter an Index: 
+Soy n_contact: 1
+1:  is not a correct index
+Please enter an Index: 
+Soy n_contact: 1
+First name  :  Jose Ignacio
+Last name   :  Alvarado Cevallos
+Nick name   :  jalvarad
+Phone number:   +642774380
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+2
+---------------------------------------------
+|   Index  |First Name|Last  name| Nick name|
+---------------------------------------------
+|         0|Jose Igna.|Alvarado .|  jalvarad|
+---------------------------------------------
+|         1|    Javier|          |          |
+---------------------------------------------
+Please enter an Index: 
+Soy n_contact: 2
+A:  is not a correct index
+Please enter an Index: 
+Soy n_contact: 2
+First name  :  Javier
+Last name   :  
+Nick name   :  
+Phone number:  
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+---------------------------------------------
+|   Index  |First Name|Last  name| Nick name|
+---------------------------------------------
+|         0|Jose Igna.|Alvarado .|  jalvarad|
+---------------------------------------------
+|         1|    Javier|          |          |
+---------------------------------------------
+Please enter an Index: 
+Soy n_contact: 2
+First name  :  Javier
+Last name   :  
+Nick name   :  
+Phone number:  
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+3
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+4
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+5
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+6
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+7
+---------------------------------------------
+|   Index  |First Name|Last  name| Nick name|
+---------------------------------------------
+|         0|Jose Igna.|Alvarado .|  jalvarad|
+---------------------------------------------
+|         1|    Javier|          |          |
+---------------------------------------------
+|         2|       rob|          |          |
+---------------------------------------------
+|         3|    Jporta|          |          |
+---------------------------------------------
+|         4|    Guille|          |          |
+---------------------------------------------
+|         5|      Dani|          |          |
+---------------------------------------------
+|         6|    MAtute|          |          |
+---------------------------------------------
+Please enter an Index: 
+Soy n_contact: 7
+First name  :  Jporta
+Last name   :  
+Nick name   :  
+Phone number:  
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+8
+---------------------------------------------
+|   Index  |First Name|Last  name| Nick name|
+---------------------------------------------
+|         0|Jose Igna.|Alvarado .|  jalvarad|
+---------------------------------------------
+|         1|    Javier|          |          |
+---------------------------------------------
+|         2|       rob|          |          |
+---------------------------------------------
+|         3|    Jporta|          |          |
+---------------------------------------------
+|         4|    Guille|          |          |
+---------------------------------------------
+|         5|      Dani|          |          |
+---------------------------------------------
+|         6|    MAtute|          |          |
+---------------------------------------------
+|         7|    paloma|          |          |
+---------------------------------------------
+Please enter an Index: 
+Soy n_contact: 8
+First name  :  Guille
+Last name   :  
+Nick name   :  
+Phone number:  
+First name: 
+Last name: 
+Nick name: 
+Phone number: 
+Darkest secret: 
+9
+---------------------------------------------
+|   Index  |First Name|Last  name| Nick name|
+---------------------------------------------
+|         0|     MAria|          |          |
+---------------------------------------------
+|         1|    Javier|          |          |
+---------------------------------------------
+|         2|       rob|          |          |
+---------------------------------------------
+|         3|    Jporta|          |          |
+---------------------------------------------
+|         4|    Guille|          |          |
+---------------------------------------------
+|         5|      Dani|          |          |
+---------------------------------------------
+|         6|    MAtute|          |          |
+---------------------------------------------
+|         7|    paloma|          |          |
+---------------------------------------------
+Please enter an Index: 
+Soy n_contact: 9
+First name  :  Dani
+Last name   :  
+Nick name   :  
+Phone number:  
