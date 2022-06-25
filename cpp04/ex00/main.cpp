@@ -6,10 +6,12 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:48:56 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/06/03 11:36:51 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:25:37 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Dog.hpp"
+#include "Cat.hpp"
 int main()
 {
     const Animal* meta = new Animal();
@@ -20,4 +22,7 @@ int main()
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     meta->makeSound();
+    delete(meta);
+    delete(j);
+    delete(i);
 }
