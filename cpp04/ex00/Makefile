@@ -6,17 +6,17 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 14:33:19 by jalvarad          #+#    #+#              #
-#    Updated: 2022/06/25 17:53:53 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/07/09 13:00:13 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= Polymorphism
 
-SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp #WrongAnimal.cpp WrongCat.cpp
+SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-HEADERS = Animal.hpp Cat.hpp Dog.hpp #WrongAnimal.hpp WrongCat.hpp
+HEADERS = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 CXFLAGS	= -Wall -Wextra -Werror -fsanitize=address
 CXX		= clang++ -std=c++98
