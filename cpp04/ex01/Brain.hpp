@@ -6,21 +6,24 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:23:02 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/09 15:27:19 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/10 17:52:06 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 #include <iostream>
+#define MAX_IDEAS_SIZE 100
 
 class Brain
 {
+    private:
+        std::string _ideas[MAX_IDEAS_SIZE];
+    
     public:
         Brain ( void );
-        Brain ( Animal& src );
-        Brain (std::string str);
+        Brain ( Brain& src );
         Brain& operator = ( Brain& src );
-        virtual ~Brain ( void );
+        ~Brain ( void );
 };
 #endif

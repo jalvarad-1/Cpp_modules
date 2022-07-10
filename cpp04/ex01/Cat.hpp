@@ -6,16 +6,19 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:48:45 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/06/25 18:01:56 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/10 18:02:10 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 #include "Animal.hpp"
-
+#include "Brain.hpp"
 class Cat: public Animal
 {
+    private:
+        Brain* _mind;
+    
     public:
         Cat ( void );
         Cat ( Cat& src );
