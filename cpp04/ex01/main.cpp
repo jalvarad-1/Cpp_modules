@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:48:56 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/23 16:16:01 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/23 17:32:47 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
+	//const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	j->makeSound();
 	i->makeSound();
-	meta->makeSound();
-	delete(meta);
+	//meta->makeSound();
+	//delete(meta);
 	delete(j);
 	delete(i);
 	std::cout << "\n\n=======  Deep copy  ================================\n\n";
