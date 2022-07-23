@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:23:02 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/10 17:52:06 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/23 13:47:53 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ class Brain
         Brain ( Brain& src );
         Brain& operator = ( Brain& src );
         ~Brain ( void );
+        std::string* get_ideas(void);
 };
 #endif

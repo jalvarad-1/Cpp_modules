@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:23:07 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/10 18:00:21 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/23 15:24:53 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ Brain& Brain::operator = ( Brain& src )
     return *this;
 }
 
+std::string* Brain::get_ideas( void )
+{
+	return this->_ideas;
+}
 Brain::~Brain ( void )
 {
     std::cout << "Brain class destructor." << std::endl;

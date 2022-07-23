@@ -6,19 +6,19 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 14:33:19 by jalvarad          #+#    #+#              #
-#    Updated: 2022/07/09 15:22:29 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/07/23 16:02:07 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= WorldOnFire
 
-SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
 HEADERS = Animal.hpp Cat.hpp Dog.hpp
 
-CXFLAGS	= -Wall -Wextra -Werror -fsanitize=address
+CXFLAGS	= -Wall -Wextra -Werror #-fsanitize=address
 CXX		= clang++ -std=c++98
 
 OBJS_DIR = ./.obj/
