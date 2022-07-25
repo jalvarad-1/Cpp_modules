@@ -6,13 +6,13 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 16:01:34 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/24 17:06:57 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/25 09:29:03 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character: public ICharacter
 {
@@ -21,6 +21,9 @@ class Character: public ICharacter
 		AMateria* _inventory[4];
 	public:
 		~Character() {}
+		Character( void );
+		Character( Character& src);
+		Character( std::string const & type);
 		std::string const & getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);

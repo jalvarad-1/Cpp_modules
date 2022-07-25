@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 17:16:28 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/24 17:45:30 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/25 09:44:50 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,12 @@
 
 class MateriaSource
 {
+	private:
+		AMateria* _toCreate[4];
 
+	public:
+		~MateriaSource() {}
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
+#endif

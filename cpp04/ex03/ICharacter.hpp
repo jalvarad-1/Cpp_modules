@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 15:57:30 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/24 16:01:22 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:13:38 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ICHARACTER_HPP
 #include "AMateria.hpp"
 
+class AMateria;
 class ICharacter
 {
 	public:
