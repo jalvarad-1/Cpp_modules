@@ -6,13 +6,13 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/24 12:39:03 by jalvarad          #+#    #+#              #
-#    Updated: 2022/07/24 15:13:18 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/01 16:53:27 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= InterfaceRecap
 
-SRCS	= AMateria.cpp
+SRCS	= AMateria.cpp Ice.cpp Cure.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 

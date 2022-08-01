@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 16:01:34 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/25 09:29:03 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:20:37 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Character: public ICharacter
 		~Character() {}
 		Character( void );
 		Character( Character& src);
+		Character& operator = (Character& src);
 		Character( std::string const & type);
 		std::string const & getName() const;
 		void equip(AMateria* m);
