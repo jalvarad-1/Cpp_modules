@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 17:07:08 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/01 17:34:59 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:44:58 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,60 @@ Character::Character( void )
 Character::Character( Character& src)
 {
 	std::cout << "Character class copy  constructor" << std::endl;
-	*this = src;	
+	*this = src;
 }
 
 Character& Character::operator = (Character& src)
 {
-	this->_name = src._name;
-	for ( short int = 0; i < 4; i++)
+	this->_name = src.getName();
+	for ( short int i = 0; i < 4; i++)
 	{
-		if (src._inventory[i]->_type == "ice")
-			this->_inventory[i] = new Ice(src._inventory[i][0]);
-		else if (src._inventory[i]->_type == "cure")
-			this->_inventory[i] = new Cure(src._inventory[i][0]);
+		if ( src._inventory[i] != NULL )
+		{
+			delete (src._inventory[i]);
+			src._inventory[i] = NULL;
+		}
+	}
+	for ( short int i = 0; i < 4; i++)
+	{
+		if ( src._inventory[i] )
+			this->_inventory[i] = src._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+	}
+	return *this;
+}
+
+Character::Character( std::string const & type): _name(type)
+{
+	std::cout << "Character class string constructor" << std::endl;
+}
+
+std::string const & Character::getName() const
+{
+	return this->_name;
+}
+
+void Character::equip(AMateria* m)
+{
+	for (short int i = 0; i < 4; i++)
+	{
+		if ( this->_inventory[i] == NULL )
+		{
+			this->_inventory[i] = m;
+			return;
+		}
 	}
 }
-Character::Character( std::string const & type)
+
+void Character::unequip(int idx)
 {
-	
+	if (idx >= 0 && idx <= 3)
+		this->_inventory[idx] = NULL;
 }
-		std::string const & getName() const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
+
+void Character::use(int idx, ICharacter& target)
+{
+	if ( idx >= 0 && idx <= 3 && this->_inventory[idx] != NULL)
+		this->_inventory[idx]->use(target);
+}
