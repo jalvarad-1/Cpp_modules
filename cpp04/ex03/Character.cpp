@@ -6,16 +6,21 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 17:07:08 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/02 17:44:58 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:20:01 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-Character::~Character()
+Character::~Character( void )
 {
 	std::cout << "Character class default destructor" << std::endl;
+	for ( short int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] != NULL)
+			delete (this->_inventory[i]);
+	}
 }
 
 Character::Character( void )
@@ -25,6 +30,7 @@ Character::Character( void )
 		this->_inventory[i] = NULL;
 	
 }
+
 Character::Character( Character& src)
 {
 	std::cout << "Character class copy  constructor" << std::endl;
@@ -36,10 +42,10 @@ Character& Character::operator = (Character& src)
 	this->_name = src.getName();
 	for ( short int i = 0; i < 4; i++)
 	{
-		if ( src._inventory[i] != NULL )
+		if ( this->_inventory[i] != NULL )
 		{
-			delete (src._inventory[i]);
-			src._inventory[i] = NULL;
+			delete (this->_inventory[i]);
+			this->_inventory[i] = NULL;
 		}
 	}
 	for ( short int i = 0; i < 4; i++)
