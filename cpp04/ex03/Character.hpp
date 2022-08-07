@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 16:01:34 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/03 18:19:55 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 11:02:44 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Character: public ICharacter
 	private:
 		std::string _name;
 		AMateria* _inventory[4];
+
 	public:
 		~Character( void );
 		Character( void );

@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 16:39:12 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/03 18:11:15 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 13:13:10 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 MateriaSource::MateriaSource( void )
 {
-	std::cout << "MateriaSource class Default Constructor" << std::endl;
 	for ( short int i = 0; i < 4; i++)
 		this->_toCreate[i] = NULL;
 }
 
 MateriaSource::MateriaSource( MateriaSource& src)
 {
-	std::cout << "MateriaSource class copy constructor" << std::endl;
+	for ( short int i = 0; i < 4; i++)
+	{
+		this->_toCreate[i] = NULL;
+	}
 	*this = src;
 }
 
@@ -47,7 +49,6 @@ MateriaSource& MateriaSource::operator = ( MateriaSource& src)
 
 MateriaSource::~MateriaSource( void )
 {
-	std::cout << "MateriaSource class default destructor" << std::endl;
 	for ( short int i = 0; i < 0; i++ )
 	{
 		if (this->_toCreate[i] != NULL)
@@ -59,7 +60,7 @@ void MateriaSource::learnMateria(AMateria* m)
 {
 	for (short int i = 0; i < 4; i++)
 	{
-		if (this->_toCreate[i] != NULL)
+		if (this->_toCreate[i] == NULL)
 		{
 			this->_toCreate[i] = m;
 			return;

@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 16:24:45 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/01 16:47:53 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 13:35:26 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 Ice::Ice( void ):AMateria("ice")
 {
-	std::cout << "Ice class default constructor" << std::endl;
 }
 
 Ice::Ice( Ice& src )
 {
-	std::cout << "Ice class copy constructor." << std::endl;
 	*this = src;
 }
 
@@ -41,5 +39,4 @@ void Ice::use(ICharacter& target)
 
 Ice::~Ice( void )
 {
-	std::cout << "Ice class default destructor" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:48:56 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/24 12:04:08 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 12:12:47 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ int main()
 	Dog* d = new Dog(*c);
 	delete(c);
 	delete(d);
+	Cat * e = new Cat();
+	Cat  f= *e;
+	Cat x;
+	f = x;
+	delete(e);
 	std::cout << "\n\n======  the main expected by the subject ===========\n\n";
 	int SIZE = 10;
 	int indx = 0;
@@ -45,6 +50,6 @@ int main()
 		set_animal[indx++] = new Cat();
 	indx  =0;
 	while (indx < SIZE)
-		delete set_animal [indx++];	
+		delete set_animal [indx++];
 	//system("leaks WorldOnFire");
 }

@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:17:46 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/25 13:08:21 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 12:46:51 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 AMateria::AMateria( void ):_type("None type set")
 {
-	std::cout << "AMateria class default constructor" << std::endl;
 }
 
 AMateria::AMateria( AMateria& src )
 {
-	std::cout << "AMateria class copy constructor." << std::endl;
 	*this = src;
 }
 
 AMateria::AMateria( std::string const & type ):_type(type)
 {
-	std::cout << "AMateria class string constructor" << std::endl;
 }
 
 AMateria& AMateria::operator = ( AMateria& src )
@@ -46,5 +43,4 @@ void AMateria::use(ICharacter& target)
 
 AMateria::~AMateria( void )
 {
-	std::cout << "AMateria class default destructor" << std::endl;
 }

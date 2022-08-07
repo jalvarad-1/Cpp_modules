@@ -6,20 +6,18 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 16:48:08 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/01 16:50:55 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 13:35:32 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure( void ):AMateria("Cure")
+Cure::Cure( void ):AMateria("cure")
 {
-	std::cout << "Cure class default constructor" << std::endl;
 }
 
 Cure::Cure( Cure& src )
 {
-	std::cout << "Cure class copy constructor." << std::endl;
 	*this = src;
 }
 
@@ -36,10 +34,9 @@ AMateria* Cure::clone() const
 
 void Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 Cure::~Cure( void )
 {
-	std::cout << "Cure class default destructor" << std::endl;
 }

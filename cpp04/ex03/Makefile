@@ -6,17 +6,17 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/24 12:39:03 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/03 18:18:42 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/07 14:12:43 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= InterfaceRecap
 
-SRCS	= AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
+SRCS	= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp 
 
 OBJS	= $(SRCS:.cpp=.o)
 
-HEADERS = AMateria.hpp
+HEADERS = AMateria.hpp Ice.hpp Cure.hpp Character.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
 CXFLAGS	= -Wall -Wextra -Werror #-fsanitize=address
 CXX		= clang++ -std=c++98
@@ -25,7 +25,7 @@ OBJS_DIR = ./.obj/
 
 OBJ = $(addprefix $(OBJS_DIR), $(OBJS))
 
-all: create_dir $(NAME)
+all: Makefile $(HEADERS) create_dir $(NAME)
 
 $(NAME): $(HEADERS) $(OBJ) Makefile
 	$(CXX) $(CXFLAGS) $(OBJ) -o $(NAME)

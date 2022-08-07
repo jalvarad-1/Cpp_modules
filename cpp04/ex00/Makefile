@@ -6,7 +6,7 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 14:33:19 by jalvarad          #+#    #+#              #
-#    Updated: 2022/07/09 13:00:13 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/07 11:33:20 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ OBJS	= $(SRCS:.cpp=.o)
 
 HEADERS = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
-CXFLAGS	= -Wall -Wextra -Werror -fsanitize=address
+CXFLAGS	= -Wall -Wextra -Werror #-fsanitize=address
 CXX		= clang++ -std=c++98
 
 OBJS_DIR = ./.obj/
 
 OBJ = $(addprefix $(OBJS_DIR), $(OBJS))
 
-all: create_dir $(NAME)
+all: Makefile $(HEADERS) create_dir $(NAME)  
 
 $(NAME): $(HEADERS) $(OBJ) Makefile
 	$(CXX) $(CXFLAGS) $(OBJ) -o $(NAME)

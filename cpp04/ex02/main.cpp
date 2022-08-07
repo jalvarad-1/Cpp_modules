@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:48:56 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/24 12:01:12 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 12:27:16 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int main()
 		set_animal[indx++] = new Cat();
 	indx  =0;
 	while (indx < SIZE)
-		delete set_animal [indx++];	
-	//system("leaks WorldOnFire");
+		delete set_animal [indx++];
+	//system("leaks PurifyIt");
 }

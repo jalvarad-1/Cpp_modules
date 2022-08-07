@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 17:07:08 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/03 18:20:01 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 14:11:36 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "Cure.hpp"
 Character::~Character( void )
 {
-	std::cout << "Character class default destructor" << std::endl;
 	for ( short int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i] != NULL)
@@ -25,15 +24,16 @@ Character::~Character( void )
 
 Character::Character( void )
 {
-	std::cout << "Character class default consructor" << std::endl;
-	for ( short int i = 0; i < 4 ; i++)
+	this->_name = "Without name";
+	for ( short int i = 0; i < 4 ; i++) {
 		this->_inventory[i] = NULL;
-	
+	}
 }
 
 Character::Character( Character& src)
 {
-	std::cout << "Character class copy  constructor" << std::endl;
+	for ( short int i = 0; i < 4 ; i++)
+		this->_inventory[i] = NULL;
 	*this = src;
 }
 
@@ -60,7 +60,9 @@ Character& Character::operator = (Character& src)
 
 Character::Character( std::string const & type): _name(type)
 {
-	std::cout << "Character class string constructor" << std::endl;
+	for ( short int i = 0; i < 4 ; i++) {
+		this->_inventory[i] = NULL;
+	}
 }
 
 std::string const & Character::getName() const
@@ -72,7 +74,13 @@ void Character::equip(AMateria* m)
 {
 	for (short int i = 0; i < 4; i++)
 	{
-		if ( this->_inventory[i] == NULL )
+		std::cout << this->_inventory[i] << m << std::endl;
+		if (this->_inventory[i] == m)
+			return;
+	}
+	for (short int i = 0; i < 4; i++)
+	{
+		if ( this->_inventory[i] == NULL)
 		{
 			this->_inventory[i] = m;
 			return;
@@ -89,5 +97,9 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	if ( idx >= 0 && idx <= 3 && this->_inventory[idx] != NULL)
+	{
+		std::cout <<idx<< std::endl;
+		this->_inventory[idx]->getType();
 		this->_inventory[idx]->use(target);
+	}
 }

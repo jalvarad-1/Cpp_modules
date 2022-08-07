@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:48:56 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/09 13:16:13 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 11:33:39 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     const Animal* i = new Cat();
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
+    i->makeSound();//will output the cat sound!
     j->makeSound();
     meta->makeSound();
     delete(meta);
@@ -34,5 +34,5 @@ int main()
     met->makeSound();
     delete(met);
     delete(b);
-
+    //system("leaks Polymorphism");
 }

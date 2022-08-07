@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 12:46:20 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/25 12:16:55 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 12:47:31 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ class AMateria
 		virtual ~AMateria( void );
 };
 #endif
-/// Falta completar fucionalidades que necesitaré más a adelante  

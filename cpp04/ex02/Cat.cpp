@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:48:41 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/07/10 18:19:37 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/07 12:23:38 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ Cat::Cat ( void ):Animal("Cat")
 Cat::Cat ( Cat& src ):Animal("Cat")
 {
     std::cout << "Cat class copy constructor" << std::endl;
+    this->_mind = NULL;
     *this = src;
 }
 
 Cat& Cat::operator = ( Cat& src )
 {
     this->type = src.type;
+    if (this->_mind)
+        delete (this->_mind);
     this->_mind = new Brain(src._mind[0]);
     return *this;
 }
