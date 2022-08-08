@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/07 19:24:13 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:44:52 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,10 @@ void Bureaucrat::decrementGrade( void )
     this->_grade++;
 }
 
+void Bureaucrat::signForm( Form &src)
+{
+    ////falta hacer este método;
+}
 std::ostream& operator<<(std::ostream& ofd, const Bureaucrat& src)
 {
     ofd << src.getName() + ", bureaucrat grade " << src.getGrade();

@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/07 19:24:13 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:02:05 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void Bureaucrat::incrementGrade( void )
 
 void Bureaucrat::decrementGrade( void )
 {
-    if ((this->getGrade() + 1) > 1)
+    if ((this->getGrade() + 1) > 150)
         throw( GradeTooLowException());
     this->_grade++;
 }
