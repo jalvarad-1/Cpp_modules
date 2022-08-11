@@ -6,13 +6,13 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/07 17:05:05 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/07 19:05:49 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/11 17:55:52 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= InterfaceRecap
 
-SRCS	= main.cpp Bureaucrat.cpp
+SRCS	= main.cpp Bureaucrat.cpp Form.cpp 
 
 OBJS	= $(SRCS:.cpp=.o)
 

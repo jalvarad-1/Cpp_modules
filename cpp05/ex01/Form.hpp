@@ -6,13 +6,15 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 16:39:06 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/08 18:11:30 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:57:07 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {

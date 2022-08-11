@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:51 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/08 18:10:26 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:57:45 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <iostream>
 #include <stdexcept>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -47,6 +49,7 @@ class Bureaucrat
         short int const & getGrade() const;
         void incrementGrade( void );
         void decrementGrade( void );
+        void evalGrade(void);
         void signForm(Form & src);
 };
 

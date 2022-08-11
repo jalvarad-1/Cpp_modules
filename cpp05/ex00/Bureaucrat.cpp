@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/08 18:02:05 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:09:32 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ Bureaucrat::Bureaucrat(void):_name("Non name"), _grade(150){}
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade):_name(name), _grade(grade)
 {
-    if( grade < 1)
-        throw( GradeTooHighException());
-    else if ( grade > 150)
-        throw( GradeTooLowException());
+    this->evalGrade();
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat & src):_name(src.getName())
@@ -29,6 +26,8 @@ Bureaucrat::Bureaucrat(Bureaucrat & src):_name(src.getName())
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat & src)
 {
+    if (this == &src)
+        return *this;
     this->_grade = src.getGrade();
     return *this;
 }
@@ -58,7 +57,13 @@ void Bureaucrat::decrementGrade( void )
         throw( GradeTooLowException());
     this->_grade++;
 }
-
+void Bureaucrat::evalGrade( void )
+{
+    if( this->getGrade() < 1)
+        throw( GradeTooHighException());
+    else if ( this->getGrade() > 150)
+        throw( GradeTooLowException());;
+}
 std::ostream& operator<<(std::ostream& ofd, const Bureaucrat& src)
 {
     ofd << src.getName() + ", bureaucrat grade " << src.getGrade();
