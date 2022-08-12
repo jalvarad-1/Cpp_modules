@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/12 17:02:04 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:55:28 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,20 @@ void Bureaucrat::evalGrade( void )
     if( this->getGrade() < 1)
         throw( GradeTooHighException());
     else if ( this->getGrade() > 150)
-        throw( GradeTooLowException());
+        throw( GradeTooLowException());;
+}
+
+void Bureaucrat::signForm(Form & form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->getName() << " signs " << form.getName() << std::endl; 
+    }
+    catch(Form::GradeTooLowException & e)
+    {
+        std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }
 std::ostream& operator<<(std::ostream& ofd, const Bureaucrat& src)
 {
