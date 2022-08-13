@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 18:11:58 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/11 18:14:45 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/13 13:10:38 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,12 @@ std::ostream& operator<<(std::ostream& ofd, const Form& src)
 	ofd << src.getName() + tmp << " | sign grade: " << 
 		src.getSignGrade() << " | execution grade: " << src.getExecGrade();
     return ofd;
+}
+
+void Form::checkRequisites(Bureaucrat const & executer) const
+{
+	if(!this->isSigned())
+		throw NotSignedException();
+	else if (this->getExecGrade() < executer.getGrade())
+		throw GradeTooHighException();
 }

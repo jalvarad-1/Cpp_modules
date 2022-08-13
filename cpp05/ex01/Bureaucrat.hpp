@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:51 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/11 17:57:45 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/13 09:07:50 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ class Bureaucrat
     private:
         std::string const _name;
         short int _grade;
+        Bureaucrat & operator=(Bureaucrat & src);
+    
     public:
         Bureaucrat(void);
         Bureaucrat(Bureaucrat & src);
         Bureaucrat(std::string const & name, int grade);
-        Bureaucrat & operator=(Bureaucrat & src);
         ~Bureaucrat(void);
         class GradeTooHighException: public std::exception
         {

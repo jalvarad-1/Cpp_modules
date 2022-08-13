@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 16:39:06 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/11 17:57:07 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/13 09:09:02 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ class Form
         bool _isSigned;
         short int const _signGrade;
         short int const _execGrade;
-    public:
         Form(void);
+        Form & operator=(Form &src);
+    
+    public:
         Form(std::string name, int signGrade, int execGrade );
         Form(Form &src);
-        Form & operator=(Form &src);
         ~Form(void);
         void beSigned(Bureaucrat &bur);
         std::string const & getName() const;
