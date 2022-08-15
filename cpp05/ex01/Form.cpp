@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 18:11:58 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/13 09:10:13 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/15 17:29:02 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ Form::Form(Form &src):_name(src.getName()), _isSigned(src.isSigned()),
 
 Form & Form::operator=(Form &src)
 {
+	if (this == &src)
+		;
 	return *this;
 }
 

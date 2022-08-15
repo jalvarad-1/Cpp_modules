@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/13 14:58:39 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/15 17:47:08 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade):_name(name), _grade(
 
 Bureaucrat::Bureaucrat(Bureaucrat & src):_name(src.getName())
 {
+    if (this == &src)
+        return ;
     *this = src;
 }
 
@@ -74,7 +76,7 @@ void Bureaucrat::signForm(Form & form)
     }
     catch(Form::GradeTooLowException & e)
     {
-        std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+        std::cerr << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 
@@ -92,11 +94,11 @@ void Bureaucrat::executeForm(Form const & form)
     catch(Form::GradeTooHighException & e)
     {
         std::string error= this->getName() + " cannot execute " + form.getName() + " because " + e.what();
-        std::cout << error << std::endl;
+        std::cerr << error << std::endl;
     }
     catch(std::exception & e)
     {
-        e.what();
+        std::cerr << e.what();
     }
 }
 

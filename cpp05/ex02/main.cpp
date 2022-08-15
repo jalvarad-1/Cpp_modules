@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:47 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/13 15:44:55 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/15 17:51:21 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 
 int main( void )
 {
+    srand(time(NULL));
     try
     {
         Bureaucrat a("edu", 40);
         std::cout << a << std::endl;
         ShrubberyCreationForm A("hola");
+        std::cout << A << std::endl;
         a.executeForm(A);
         a.signForm(A);
         a.executeForm(A);

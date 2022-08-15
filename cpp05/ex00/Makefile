@@ -6,11 +6,11 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/07 17:05:05 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/07 19:05:49 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/15 17:23:50 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= InterfaceRecap
+NAME	= Bureaucrat
 
 SRCS	= main.cpp Bureaucrat.cpp
 

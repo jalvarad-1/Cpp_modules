@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/11 17:55:28 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/15 17:27:21 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade):_name(name), _grade(
 
 Bureaucrat::Bureaucrat(Bureaucrat & src):_name(src.getName())
 {
+    if (this == &src)
+        return ;
     *this = src;
 }
 
