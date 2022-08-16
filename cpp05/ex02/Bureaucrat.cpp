@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/15 17:47:08 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/16 16:21:18 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void Bureaucrat::executeForm(Form const & form)
     try
     {
         form.execute(*this);
-        std::cout << this->getName() << " executes " << form.getName() << std::endl;
     }
     catch(Form::NotSignedException &e)
     {

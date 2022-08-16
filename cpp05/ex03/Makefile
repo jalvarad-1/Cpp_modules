@@ -6,17 +6,17 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/07 17:05:05 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/13 18:49:52 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/16 16:49:21 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= InterfaceRecap
+NAME	= Intern
 
 SRCS	= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp  RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-HEADERS = Bureaucrat.hpp
+HEADERS = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 CXFLAGS	= -Wall -Wextra -Werror #-fsanitize=address
 CXX		= clang++ -std=c++98
