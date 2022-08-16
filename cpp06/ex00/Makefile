@@ -6,7 +6,42 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/14 11:02:55 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/14 11:03:55 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/16 17:31:30 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME	= convert
+
+SRCS	= main.cpp Convert.cpp
+
+OBJS	= $(SRCS:.cpp=.o)
+
+HEADERS = Convert.hpp
+
+CXFLAGS	= -Wall -Wextra -Werror #-fsanitize=address
+CXX		= clang++ -std=c++98
+
+OBJS_DIR = ./.obj/
+
+OBJ = $(addprefix $(OBJS_DIR), $(OBJS))
+
+all: Makefile $(HEADERS) create_dir $(NAME)
+
+$(NAME): $(HEADERS) $(OBJ) Makefile
+	$(CXX) $(CXFLAGS) $(OBJ) -o $(NAME)
+
+create_dir:
+	@mkdir -p $(OBJS_DIR)
+
+$(OBJS_DIR)%.o: %.cpp
+	$(CXX) $(CXFLAGS) -o $@ -c $<
+
+clean:
+		rm -rf $(OBJS_DIR)
+
+fclean: clean
+		rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all re clean fclean
