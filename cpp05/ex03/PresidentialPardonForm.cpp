@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 18:08:38 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/13 17:00:14 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/17 18:33:06 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ PresidentialPardomForm::PresidentialPardomForm(void):
 	Form("No Name", DEFAULT_GRADE, DEFAULT_GRADE), _target("NON TARGET") {}
 
 PresidentialPardomForm::PresidentialPardomForm(std::string const & target):
-	Form("presidential pardom", RRF_SIGN_GRADE, RRF_EXEC_GRADE), _target(target)
+	Form("presidential pardom", PPF_SIGN_GRADE, PPF_EXEC_GRADE), _target(target)
 {
 }
 
@@ -42,6 +42,7 @@ std::string const & PresidentialPardomForm::getTarget(void) const
 void PresidentialPardomForm::execute(Bureaucrat const & executer) const
 {
 	this->checkRequisites(executer);
+	std::cout << executer.getName() << " executes " << this->getName() << std::endl;
 	this->execAction();
 }
 

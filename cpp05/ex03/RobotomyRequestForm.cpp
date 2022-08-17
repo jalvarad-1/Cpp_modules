@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 12:27:08 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/13 16:59:57 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/17 18:11:31 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ std::string const & RobotomyRequestForm::getTarget(void) const
 void RobotomyRequestForm::execute(Bureaucrat const & executer) const
 {
 	this->checkRequisites(executer);
+	std::cout << executer.getName() << " executes " << this->getName() << std::endl;
 	this->execAction();
 }
 
