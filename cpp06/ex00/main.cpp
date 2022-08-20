@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 11:04:00 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/16 18:15:52 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/20 17:18:29 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ int main(int argc, char **argv)
         return 0;
     }
     
-    Convert Con;
-    std::string str_conv = Con.trim(argv[1]);
-    std::cout << "|" << str_conv << "|"<< std::endl;
-    Con.to_char(str_conv);
+    Convert Con(argv[1]);
     return 0;
 }

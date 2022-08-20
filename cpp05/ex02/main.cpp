@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:47 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/16 16:34:20 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/17 18:14:41 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main( void )
 
     try
     {
-        Bureaucrat c("Pepa", 40);
+        Bureaucrat c("Pepa", 140);
         std::cout << c << std::endl;
         PresidentialPardomForm C("kakaroto");
         std::cout << C << std::endl;

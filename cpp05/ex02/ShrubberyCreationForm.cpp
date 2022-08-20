@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 18:09:43 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/13 15:37:23 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/17 18:01:39 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ std::string const & ShrubberyCreationForm::getTarget(void) const
 void ShrubberyCreationForm::execute(Bureaucrat const & executer) const
 {
 	this->checkRequisites(executer);
+	std::cout << executer.getName() << " executes " << this->getName() << std::endl;
 	this->execAction();
 }
 

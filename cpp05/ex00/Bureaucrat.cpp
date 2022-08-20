@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/15 17:15:58 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/17 18:00:46 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void Bureaucrat::decrementGrade( void )
         throw( GradeTooLowException());
     this->_grade++;
 }
+
 void Bureaucrat::evalGrade( void )
 {
     if( this->getGrade() < 1)
@@ -66,6 +67,7 @@ void Bureaucrat::evalGrade( void )
     else if ( this->getGrade() > 150)
         throw( GradeTooLowException());
 }
+
 std::ostream& operator<<(std::ostream& ofd, const Bureaucrat& src)
 {
     ofd << src.getName() + ", bureaucrat grade " << src.getGrade();
