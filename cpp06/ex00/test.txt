@@ -6,3 +6,5 @@
 ./convert 0.0
 ./convert 1.24f
 ./convert 1.18973e+4932
+./convert .1
+./convert .

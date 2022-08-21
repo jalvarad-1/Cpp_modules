@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:47 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/17 18:31:41 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/21 09:22:30 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int main( void )
         aux = d.makeForm("shrubberry creatio", "pepe");
         if ( aux )
         {
-        a.executeForm(*aux);
-        a.signForm(*aux);
-        a.executeForm(*aux);
+            a.executeForm(*aux);
+            a.signForm(*aux);
+            a.executeForm(*aux);
         }
         delete (aux);
         std::cout << "----------------------\n" << std::endl;

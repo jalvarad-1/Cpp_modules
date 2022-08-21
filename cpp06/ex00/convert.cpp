@@ -6,16 +6,14 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 11:04:08 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/20 18:24:54 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/21 17:02:49 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 #include <limits.h>
 #include <float.h>
-//hacer método que determine si entra dentro de nan y esas cosas
-//método que cuente los puntos, signos y negativos
-//método trim string  : ya está, parece que funcinona
+
 std::string trim(char * str)
 {
 	std::string str_trim = str;
@@ -54,13 +52,17 @@ bool Convert::set_int(std::string str)
 	try
 	{
 		this->_interger = std::stoi(str, &pEnd);
-		/// comprobar formato
+		if (str[pEnd] != 0)
+			return false;
 		return true;
 	}
 	catch(...)
 	{
-		this->errors[0] = "Impossible";
-		this->errors[1] = "Impossible";
+		if(str[0] != 0 && str[0] != '.')
+		{
+			this->errors[0] = "Impossible";
+			this->errors[1] = "Impossible";
+		}
 	}
 	return false;
 }
@@ -126,23 +128,123 @@ void Convert::int_to_types(int to_convert)
 		std::cout << "char: " << "Non displayable" << std::endl;
 	
 	std::cout << "int: " << this->_interger << std::endl;
+
+	std::cout<< std::fixed << std::setprecision(1);
+	this->_fl = static_cast<float>(to_convert);
+	std::cout << "float: " << this->_fl <<"f" << std::endl;
+
+	this->_dbl = static_cast<double>(to_convert);
+	std::cout << "double: " << this->_dbl << std::endl;
+
 }
 
-/*void Convert::float_to_types(float to_convert)
+void Convert::float_to_char(float to_convert)
 {
-	;
+	this->_chr = static_cast<char>(to_convert);
+	if (to_convert > CHAR_MAX || to_convert < CHAR_MIN )
+		std::cout << "char: " << "Impossible" << std::endl;
+	else if (isprint(this->_chr))
+		std::cout << "char: " << this->_chr << std::endl;
+	else
+		std::cout << "char: " << "Non displayable" << std::endl;
 }
 
-void doube_to_types(double to_convert)
+void Convert::float_to_int(float to_convert)
 {
-	;
-}*/
+	this->_interger = static_cast<char>(to_convert);
+	if (to_convert > INT_MAX || to_convert < INT_MIN )
+		std::cout << "int: " << "Impossible" << std::endl;
+	else
+		std::cout << "int: " << this->_interger << std::endl;
+}
+
+void Convert::float_to_types(float to_convert)
+{
+	size_t precision = this->_precision;
+	if (precision > 7)
+		precision = 7;
+	this->float_to_char(to_convert);
+	this->float_to_int(to_convert);
+	
+	std::cout << std::fixed << std::setprecision(precision);
+	std::cout << "float: " << to_convert << "f" << std::endl;
+
+	this->_dbl = static_cast<double>(to_convert);
+	std::cout << "double: " << this->_dbl << std::endl;
+}
+//################### *********** doubles types
+void Convert::double_to_char(double to_convert)
+{
+	this->_chr = static_cast<char>(to_convert);
+	if (to_convert > CHAR_MAX || to_convert < CHAR_MIN )
+		std::cout << "char: " << "Impossible" << std::endl;
+	else if (isprint(this->_chr))
+		std::cout << "char: " << this->_chr << std::endl;
+	else
+		std::cout << "char: " << "Non displayable" << std::endl;
+}
+
+void Convert::double_to_int(double to_convert)
+{
+	this->_interger = static_cast<char>(to_convert);
+	if (to_convert > INT_MAX || to_convert < INT_MIN )
+		std::cout << "int: " << "Impossible" << std::endl;
+	else
+		std::cout << "int: " << this->_interger << std::endl;
+}
+
+void Convert::double_to_float(double to_convert)
+{
+	size_t precision = this->_precision;
+	this->_fl = static_cast<float>(to_convert);
+	if (to_convert > FLT_MAX || to_convert < FLT_MIN)
+		std::cout << "float: " << "Impossible" << std::endl;
+	else
+	{
+		if (precision > 7)
+			this->_precision = 7;
+		std::cout << std::fixed << std::setprecision(precision);
+		std::cout << "float: " << this->_fl << std::endl;
+	}
+}
+
+void Convert::double_to_types(double to_convert)
+{
+	size_t precision = this->_precision;
+	if (precision > 15)
+		precision = 15;
+	this->double_to_char(to_convert);
+	this->double_to_int(to_convert);
+	this->double_to_float(to_convert);
+
+	std::cout << std::fixed << std::setprecision(precision);
+	std::cout << "double: " << this->_dbl << std::endl;;
+}
 
 Convert::Convert(char* str)
 {
 	this->_to_convert = trim(str);
+	this->setPrecision();
 	if (this->set_char(this->_to_convert))
 		this->char_to_types(this->_to_convert[0]);
 	else if (this->set_int(this->_to_convert))
 		this->int_to_types(this->_interger);
+	else if (this->set_float(this->_to_convert))
+		this->float_to_types(this->_fl);
+	else if (this->set_double(this->_to_convert))
+		this->double_to_types(this->_dbl);
+}
+
+void Convert::setPrecision(void)
+{
+	size_t found = this->_to_convert.find('.');
+	size_t end = this->_to_convert.find_first_of(SUFIX);
+	if (end == std::string::npos)
+		end = this->_to_convert.size() - 1;
+	if ( found != std::string::npos && end > found)
+	{
+		this->_precision = end - found;
+		return ;
+	}
+	this->_precision = 1;
 }

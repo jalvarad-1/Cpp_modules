@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:05:54 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/16 16:21:18 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/21 09:18:17 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void Bureaucrat::signForm(Form & form)
     }
     catch(Form::GradeTooLowException & e)
     {
-        std::cerr << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+        std::cerr << this->getName() << " cannot sign " << form.getName() << " because " << e.what();
     }
 }
 
