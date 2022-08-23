@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 11:04:04 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/21 17:01:39 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/22 16:49:48 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Convert
 //		double to_double(std::string & str);
 /// ******* utils **** ///
 		bool is_pseudoliteral(std::string str);
+		std::string remove_f(std::string src);
 /////
 		bool set_char(std::string str);
 		bool set_double(std::string str);
@@ -64,4 +65,6 @@ class Convert
 		void setPrecision(void);
 };
 std::string trim(char * str);
+
+char last_char(std::string src);
 #endif
