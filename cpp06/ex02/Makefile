@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/23 18:40:05 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/24 17:11:58 by jalvarad         ###   ########.fr        #
+#    Created: 2022/08/24 17:35:44 by jalvarad          #+#    #+#              #
+#    Updated: 2022/08/24 17:46:16 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRCS	= main.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
+HEADERS = Base.hpp
+
 CXFLAGS	= -Wall -Wextra -Werror #-fsanitize=address
 CXX		= clang++ -std=c++98
 
@@ -23,9 +25,9 @@ OBJS_DIR = ./.obj/
 
 OBJ = $(addprefix $(OBJS_DIR), $(OBJS))
 
-all: Makefile create_dir $(NAME)
+all: Makefile $(HEADERS) create_dir $(NAME)
 
-$(NAME): $(OBJ) Makefile
+$(NAME): $(HEADERS) $(OBJ) Makefile
 	$(CXX) $(CXFLAGS) $(OBJ) -o $(NAME)
 
 create_dir:
