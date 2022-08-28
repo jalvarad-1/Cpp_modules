@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:24:52 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/24 18:45:47 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/28 14:25:37 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,11 @@ Base * generate(void)
 {
 	short int i = rand() % 3;
 	if (i == 0)
-	{
-		std::cout << "soy a "<< std::endl;
 		return new A;
-	}
 	else if (i == 1)
-	{
-		std::cout << "soy B "<< std::endl;
 		return new B;
-	}
-	else if (i == 2)
-		{
-		std::cout << "soy C "<< std::endl;
+	else
 		return new C;
-	}
-	return new A;
 }
 
 void identify(Base* p)

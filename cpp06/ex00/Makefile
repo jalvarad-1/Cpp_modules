@@ -6,7 +6,7 @@
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/14 11:02:55 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/16 17:31:30 by jalvarad         ###   ########.fr        #
+#    Updated: 2022/08/27 10:48:19 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,12 @@ OBJS_DIR = ./.obj/
 
 OBJ = $(addprefix $(OBJS_DIR), $(OBJS))
 
-all: Makefile $(HEADERS) create_dir $(NAME)
+all: Makefile $(HEADERS) $(OBJS_DIR) $(NAME)
 
-$(NAME): $(HEADERS) $(OBJ) Makefile
+$(NAME): Makefile $(HEADERS) $(OBJS_DIR) $(OBJ) 
 	$(CXX) $(CXFLAGS) $(OBJ) -o $(NAME)
 
-create_dir:
+$(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o: %.cpp

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 11:04:00 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/27 09:46:51 by jalvarad         ###   ########.fr       */
+/*   Created: 2022/08/28 15:07:50 by jalvarad          #+#    #+#             */
+/*   Updated: 2022/08/28 15:40:23 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
-#define USAGE "usage: ./convert <argument_to_convert>"
-
-int main(int argc, char **argv)
+#ifndef ITER_HPP
+#define ITER_HPP
+#include <iostream>
+template<typename T>
+void iter(T *array, size_t size, void (*function) (T const &))
 {
-    if (argc != 2)
-    {
-        std::cout << USAGE << std::endl;
-        return 0;
-    }
-
-    Convert Con(argv[1]);
-    return 0;
+    for (size_t i = 0; i < size; i++ )
+        function(array[i]);
 }
+#endif

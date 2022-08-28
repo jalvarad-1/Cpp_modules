@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/24 17:35:44 by jalvarad          #+#    #+#              #
-#    Updated: 2022/08/27 10:49:55 by jalvarad         ###   ########.fr        #
+#    Created: 2022/08/28 15:08:13 by jalvarad          #+#    #+#              #
+#    Updated: 2022/08/28 16:46:34 by jalvarad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= convert
+NAME	= iter
 
 SRCS	= main.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-HEADERS = Base.hpp
+HEADERS = iter.hpp
 
 CXFLAGS	= -Wall -Wextra -Werror #-fsanitize=address
 CXX		= clang++ -std=c++98
@@ -33,7 +33,7 @@ $(NAME): Makefile $(HEADERS) $(OBJS_DIR) $(OBJ)
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
-$(OBJS_DIR)%.o: %.cpp
+$(OBJS_DIR)%.o: %.cpp $(HEADERS)
 	$(CXX) $(CXFLAGS) -o $@ -c $<
 
 clean:

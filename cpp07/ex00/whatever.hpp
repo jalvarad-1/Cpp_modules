@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 11:04:00 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/27 09:46:51 by jalvarad         ###   ########.fr       */
+/*   Created: 2022/08/28 14:27:10 by jalvarad          #+#    #+#             */
+/*   Updated: 2022/08/28 15:05:43 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
-#define USAGE "usage: ./convert <argument_to_convert>"
-
-int main(int argc, char **argv)
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
+#include <iostream>
+template<typename T>
+void swap(T & a, T & b)
 {
-    if (argc != 2)
-    {
-        std::cout << USAGE << std::endl;
-        return 0;
-    }
-
-    Convert Con(argv[1]);
-    return 0;
+    T aux = a ;
+    a = b;
+    b = aux;
 }
+
+template<typename T>
+T min(T const a, T const b)
+{
+    return a <= b? a: b;
+}
+
+template<typename T>
+T max(T const a, T const b)
+{
+    return a >= b? a: b;
+}
+#endif

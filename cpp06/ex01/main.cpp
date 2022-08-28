@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 18:39:53 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/24 17:23:23 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/08/27 10:32:35 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 		int _interger =std::stoi(to_convert, &pEnd);
 		if (to_convert[pEnd] != 0)
 		{
-			std::cout<< "Impossile" << std::endl;
+			std::cout<< "Impossible" << std::endl;
 			return 0;
 		}
 		Data data = {_interger};
