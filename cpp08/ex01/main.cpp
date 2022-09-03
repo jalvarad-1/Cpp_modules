@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 14:27:10 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/09/01 17:00:19 by jalvarad         ###   ########.fr       */
+/*   Created: 2022/09/03 12:43:29 by jalvarad          #+#    #+#             */
+/*   Updated: 2022/09/03 18:45:55 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
-#include <iostream>
-template<typename T>
-void swap(T & a, T & b)
+#include "span.hpp"
+int main()
 {
-    T aux = a ;
-    a = b;
-    b = aux;
+	Span sp(5);
+	Span sv();
+	sp = sv;
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	//std::cout << sp.longestSpan() << std::endl;
 }
-
-template<typename T>
-T min(T const a, T const b)
-{
-    return a <= b? a: b;
-}
-
-template<typename T>
-T max(T const a, T const b)
-{
-    return a >= b? a: b;
-}
-#endif

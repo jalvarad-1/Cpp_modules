@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 14:27:10 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/09/01 17:00:19 by jalvarad         ###   ########.fr       */
+/*   Created: 2022/09/01 17:03:57 by jalvarad          #+#    #+#             */
+/*   Updated: 2022/09/03 12:32:35 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+#include <vector>
 #include <iostream>
-template<typename T>
-void swap(T & a, T & b)
+#include <algorithm>
+
+class NotFoundException: public std::exception
 {
-    T aux = a ;
-    a = b;
-    b = aux;
-}
+	public:
+		virtual const char* what() const throw()
+		{return "Int not found!!";}
+};
 
 template<typename T>
-T min(T const a, T const b)
+int easyfind(T const & array, int i)
 {
-    return a <= b? a: b;
-}
 
-template<typename T>
-T max(T const a, T const b)
-{
-    return a >= b? a: b;
+	std::vector<const int>::iterator found = std::find(array.begin(), array.end(), i);
+	int a = *found;
+	if (found != array.end())
+		return a;
+	throw NotFoundException();
+	return a;
 }
 #endif
