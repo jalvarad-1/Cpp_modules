@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 12:43:37 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/09/03 18:35:02 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/09/04 13:57:07 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,18 @@ class Span
 	private:
 		unsigned int N;
 		std::vector<int> _array;
-		Span(void){}
 	
 	public:
+		Span(void){}
 		Span(unsigned int size);
-		Span(Span & src);
-		Span & operator=(Span & src);
+		Span(const Span & src);
+		Span & operator=(const Span & src);
 		~Span(void);
 		void addNumber(int to_save);
-		void betterAddNumber(std::vector<int> to_add);
+		void betterAddNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		int shortestSpan(void);
 		int longestSpan(void);
+		std::vector<int> & getArray(void){return _array;}
 		class FullVectorException: public std::exception
 		{
 			public:
