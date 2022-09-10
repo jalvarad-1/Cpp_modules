@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 12:43:37 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/09/04 13:57:07 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/09/10 18:31:33 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Span
 		Span(const Span & src);
 		Span & operator=(const Span & src);
 		~Span(void);
+		
 		void addNumber(int to_save);
 		void betterAddNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		int shortestSpan(void);
@@ -39,11 +40,12 @@ class Span
 				virtual const char* what() const throw()
 				{return "The array is full";}
 		};
+		
 		class EmptyVectorException: public std::exception
 		{
 			public:
 				virtual const char* what() const throw()
-					{return "The array is emptyor only has one number stored";}
+					{return "The array is empty or only has one number stored";}
 		};
 };
 #endif

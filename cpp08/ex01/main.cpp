@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 12:43:29 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/09/04 14:01:06 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/09/10 19:10:31 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main()
 		std::cout <<e.what()<< std::endl;
 	}
 
-	Span spa(7);
+	Span spa(6);
 	spa.addNumber(4);
 	spa.addNumber(2);
 	spa.betterAddNumber(sp.getArray().begin(), sp.getArray().end());

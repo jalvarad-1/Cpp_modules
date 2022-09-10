@@ -6,7 +6,7 @@
 /*   By: jalvarad <jalvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 15:08:09 by jalvarad          #+#    #+#             */
-/*   Updated: 2022/08/29 18:01:05 by jalvarad         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:57:50 by jalvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ class Pepe
         int _n;
     public:
         Pepe (void):_n(0){}
-        int operator+(int i)const{return this->_n + i;}
-        int getN(void){return this->_n;};
+        int operator+(int i) const {return this->_n + i;}
+        int getN(void) {return this->_n;};
 };
 std::ostream& operator<<(std::ostream& ofd, Pepe& src){ ofd << src.getN();return ofd;};
 template<typename T>
